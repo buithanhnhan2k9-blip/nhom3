@@ -1,0 +1,296 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+    overflow-x:hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    width:100%;
+    background:#000;
+
+    padding:18px 60px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    box-shadow:0 3px 10px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    margin-left:30px;
+}
+
+.logo img{
+    width:75px;
+    height:75px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:3px solid #ff4d4d;
+
+    background:#fff;
+}
+
+.logo-text h1{
+    color:#ff4d4d;
+    font-size:34px;
+    font-weight:bold;
+}
+
+.logo-text span{
+    color:#ccc;
+    font-size:13px;
+    letter-spacing:1px;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    margin-left:80px;
+}
+.logo img{
+    width:70px;
+    height:70px;
+    object-fit:cover;
+    border-radius:50%;
+    border:3px solid #ff4d4d;
+    background:#fff;
+}
+
+
+
+/* =========================
+   MENU
+========================= */
+
+nav{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+nav ul{
+    display:flex;
+    align-items:center;
+    gap:35px;
+    list-style:none;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:bold;
+    transition:0.3s;
+    position:relative;
+    padding:5px 0;
+}
+
+nav ul li a:hover{
+    color:#ff4d4d;
+}
+
+nav ul li a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0%;
+    height:2px;
+    background:#ff4d4d;
+    transition:0.3s;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+
+/* =========================
+   REGISTER
+========================= */
+
+.register{
+    min-height:90vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:60px 20px;
+}
+
+/* FORM */
+
+.form-box{
+    width:430px;
+
+    background:white;
+
+    padding:45px;
+
+    border-radius:18px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.12);
+}
+
+.form-box h1{
+    text-align:center;
+
+    margin-bottom:35px;
+
+    font-size:42px;
+
+    color:#111;
+}
+
+/* FORM */
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+}
+
+form input{
+    padding:16px;
+
+    border:1px solid #ccc;
+
+    border-radius:10px;
+
+    font-size:17px;
+
+    outline:none;
+
+    transition:0.3s;
+}
+
+form input:focus{
+    border:1px solid #ff4d4d;
+
+    box-shadow:0 0 8px rgba(255,77,77,0.3);
+}
+
+/* BUTTON */
+
+form button{
+    padding:16px;
+
+    border:none;
+
+    background:#ff4d4d;
+
+    color:white;
+
+    border-radius:10px;
+
+    font-size:19px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+form button:hover{
+    background:#e63939;
+
+    transform:translateY(-2px);
+}
+
+/* MESSAGE */
+
+.message{
+    background:#d4edda;
+
+    color:#155724;
+
+    padding:14px;
+
+    border-radius:8px;
+
+    margin-bottom:20px;
+
+    text-align:center;
+
+    font-size:16px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    header{
+        flex-direction:column;
+        gap:20px;
+
+        padding:20px;
+    }
+
+    .logo{
+        margin-left:0;
+    }
+
+    nav{
+        margin-right:0;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+
+        gap:20px;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .form-box{
+        width:100%;
+
+        padding:30px 25px;
+    }
+
+    .form-box h1{
+        font-size:32px;
+    }
+
+    nav ul li a{
+        font-size:16px;
+    }
+
+}

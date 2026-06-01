@@ -1,0 +1,407 @@
+/* ==========================================================================
+   1. RESET & GENERAL STYLES
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f5;
+    overflow-x: hidden;
+    color: #111;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ==========================================================================
+   2. HEADER & NAVIGATION (Lấy nguyên bản từ code mẫu)
+   ========================================================================== */
+header {
+    width: 100%;
+    background: #000;
+    padding: 18px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 80px;
+}
+
+.logo img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #ff4d4d;
+    background: #fff;
+}
+
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    padding: 5px 0;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #ff4d4d;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: #ff4d4d;
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   3. SẢN PHẨM BÁN CHẠY SECTION (Đồng bộ theo cấu trúc HTML của bạn)
+   ========================================================================== */
+.best-page {
+    padding: 80px 8%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.best-page h1 {
+    text-align: center;
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    color: #111;
+    position: relative;
+}
+
+/* Đường gạch đỏ dưới tiêu đề giống phong cách chung */
+.best-page h1::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #ff4d4d;
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* Grid danh sách sản phẩm */
+.best-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+/* Thẻ sản phẩm */
+.best-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+/* Hiệu ứng bay lên khi hover sản phẩm */
+.best-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.best-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.best-content {
+    padding: 25px;
+    text-align: center;
+}
+
+.best-content h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #111;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Thu gọn tên sản phẩm nếu quá dài */
+}
+
+.best-content h4 {
+    font-size: 24px;
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   4. FOOTER (Áp dụng màu gradient tối sang trọng từ code mẫu)
+   ========================================================================== */
+footer {
+    margin-top: 90px;
+    background: linear-gradient(135deg, #0a0a0a, #111, #1b1b1b);
+    color: white;
+    padding: 80px 8% 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: space-between;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 280px;
+}
+
+.footer-column h3 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: white;
+}
+
+.footer-column p {
+    color: #ccc;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+}
+
+.footer-column p i {
+    color: #ff4d4d; /* Màu icon đỏ đặc trưng */
+    width: 20px;
+}
+
+/* Danh sách link hỗ trợ */
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 15px;
+}
+
+.footer-links li a {
+    color: #ccc;
+    font-size: 15px;
+}
+
+.footer-links li a:hover {
+    color: #ff4d4d;
+    padding-left: 8px; /* Hiệu ứng đẩy nhẹ sang phải khi di chuột */
+}
+
+/* Khối bản đồ */
+.footer-map iframe {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Dòng bản quyền dưới cùng */
+.footer-bottom {
+    width: 100%;
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* ==========================================================================
+   5. RESPONSIVE (Tối ưu hiển thị mobile & tablet giống code mẫu)
+   ========================================================================== */
+@media(max-width: 900px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+@media(max-width: 768px) {
+    .logo {
+        margin-left: 0;
+    }
+
+    .best-page {
+        padding: 60px 20px;
+    }
+
+    .best-page h1 {
+        font-size: 32px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 35px;
+    }
+
+    .footer-column p {
+        justify-content: center;
+    }
+
+    .footer-links li a:hover {
+        padding-left: 0; /* Tắt đẩy chữ trên mobile để tránh lệch menu */
+    }
+}
+
+@media(max-width: 500px) {
+    nav ul li a {
+        font-size: 15px;
+    }
+
+    .best-card img {
+        height: 280px; /* Thu nhỏ ảnh sản phẩm trên màn hình dọc nhỏ */
+    }
+}
+/* ==========================================================================
+   FOOTER TỐI MÀU (Dark Theme)
+   ========================================================================== */
+.site-footer {
+    margin-top: 90px;
+    background: linear-gradient(135deg, #0a0a0a, #111, #1b1b1b);
+    color: white;
+    padding: 80px 8% 30px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: space-between;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 280px;
+}
+
+.footer-column h3 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: white;
+}
+
+.footer-column p {
+    color: #ccc;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+}
+
+.footer-column p i {
+    color: #ff4d4d; /* Icon màu đỏ cam */
+    width: 20px;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 15px;
+}
+
+.footer-links li a {
+    color: #ccc;
+    font-size: 15px;
+}
+
+.footer-links li a:hover {
+    color: #ff4d4d;
+    padding-left: 8px; /* Đẩy chữ sang phải tạo cảm giác tương tác */
+}
+
+.footer-map iframe {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.footer-bottom {
+    width: 100%;
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* --- RESPONSIVE FOOTER --- */
+@media(max-width: 768px) {
+    .site-footer {
+        padding: 60px 5% 30px;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 35px;
+    }
+
+    .footer-column p {
+        justify-content: center; /* Đưa các icon và chữ ra giữa màn hình */
+    }
+
+    .footer-links li a:hover {
+        padding-left: 0; 
+    }
+}
